@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 https://maven.apache.org/xsd/settings-1.2.0.xsd">
+
+  <mirrors>
+    <mirror>
+      <id>central</id>
+      <url>http://localhost:8081/repository/maven-public/</url>
+      <mirrorOf>central</mirrorOf>
+    </mirror>    
+    <mirror>
+      <id>sonatype</id>
+      <url>http://localhost:8081/repository/sonatype/</url>
+      <mirrorOf>rso-public-grid,sonatype-snapshots</mirrorOf>
+    </mirror>
+    <mirror>
+      <id>tycho</id>
+      <url>http://localhost:8081/repository/tycho-snapshots/</url>
+      <mirrorOf>tycho-snapshots</mirrorOf>
+    </mirror>    
+
+    <mirror>
+      <id>eclipse_2023-03</id>
+      <url>http://localhost:8081/repository/eclipse_2023-03</url>
+      <mirrorOf>https://download.eclipse.org/releases/2023-03/202303151000</mirrorOf>
+      <layout>p2</layout>
+      <mirrorOfLayouts>p2</mirrorOfLayouts>
+    </mirror>    
+    <mirror>
+      <id>eclipse_2021-12</id>
+      <url>http://localhost:8081/repository/eclipse_2021-12</url>
+      <mirrorOf>https://download.eclipse.org/releases/2021-12/202112081000</mirrorOf>
+      <layout>p2</layout>
+      <mirrorOfLayouts>p2</mirrorOfLayouts>
+    </mirror>
+
+    <mirror>
+      <id>orbit_2020-11</id>
+      <url>http://localhost:8081/repository/orbit_2020-11/</url>
+      <mirrorOf>https://download.eclipse.org/tools/orbit/downloads/drops/R20201118194144/repository</mirrorOf>
+      <layout>p2</layout>
+      <mirrorOfLayouts>p2</mirrorOfLayouts>
+    </mirror> 
+    <mirror>
+      <id>orbit_2021-12</id>
+      <url>http://localhost:8081/repository/orbit_2020-05/</url>
+      <mirrorOf>https://download.eclipse.org/tools/orbit/downloads/drops/R20200529191137/repository</mirrorOf>
+      <layout>p2</layout>
+      <mirrorOfLayouts>p2</mirrorOfLayouts>
+    </mirror> 
+    <mirror>
+      <id>orbit_2021-12</id>
+      <url>http://localhost:8081/repository/orbit_2021-12/</url>
+      <mirrorOf>https://download.eclipse.org/tools/orbit/downloads/2021-12</mirrorOf>
+      <layout>p2</layout>
+      <mirrorOfLayouts>p2</mirrorOfLayouts>
+    </mirror>
+    <mirror>
+      <id>orbit_2023-03</id>
+      <url>http://localhost:8081/repository/orbit_2023-03/</url>
+      <mirrorOf>https://download.eclipse.org/tools/orbit/downloads/2023-03</mirrorOf>
+      <layout>p2</layout>
+      <mirrorOfLayouts>p2</mirrorOfLayouts>
+    </mirror>
+
+    <mirror>
+      <id>xtext_2.29.0</id>
+      <url>http://localhost:8081/repository/xtext_2.29.0/</url>
+      <mirrorOf>https://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.29.0</mirrorOf>
+      <layout>p2</layout>
+      <mirrorOfLayouts>p2</mirrorOfLayouts>
+    </mirror>
+
+    <mirror>
+      <id>henshin_1.6.0</id>
+      <url>http://localhost:8081/repository/henshin_1.6.0/</url>
+      <mirrorOf>http://download.eclipse.org/modeling/emft/henshin/updates/1.6.0</mirrorOf>
+      <layout>p2</layout>
+      <mirrorOfLayouts>p2</mirrorOfLayouts>
+    </mirror>
+
+    <mirror>
+      <id>papyrus_2022-12</id>
+      <url>http://localhost:8081/repository/papyrus_2022-12/</url>
+      <mirrorOf>https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2022-12</mirrorOf>
+      <layout>p2</layout>
+      <mirrorOfLayouts>p2</mirrorOfLayouts>
+    </mirror>
+
+    <!-- -->
+    <mirror>
+      <id>mdsd-license_latest</id>
+      <url>http://localhost:8081/repository/mdsd-license_latest/</url>
+      <mirrorOf>https://updatesite.mdsd.tools/build-licensefeature/releases/latest</mirrorOf>
+      <layout>p2</layout>
+      <mirrorOfLayouts>p2</mirrorOfLayouts>
+    </mirror>
+  </mirrors>
+
+  <profiles>
+    <profile>
+      <id>nexus</id>
+      <!--Enable snapshots for the built in central repo to direct -->
+      <!--all requests to nexus via the mirror -->
+      <repositories>
+        <repository>
+          <id>central</id>
+          <url>http://central</url>
+          <releases><enabled>true</enabled></releases>
+          <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+      </repositories>
+     <pluginRepositories>
+        <pluginRepository>
+          <id>central</id>
+          <url>http://central</url>
+          <releases><enabled>true</enabled></releases>
+          <snapshots><enabled>true</enabled></snapshots>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>    
+  </profiles>
+
+  <activeProfiles>
+    <activeProfile>nexus</activeProfile>
+  </activeProfiles>
+</settings>
