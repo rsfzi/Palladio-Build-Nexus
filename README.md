@@ -1,10 +1,11 @@
 # Palladio-Build-Nexus
-Setup a nexus cache for palladio builds.
+Setup a nexus cache for palladio builds.  
 Clone this repo to: `<develop>/Palladio-Build-Nexus`
 
-## Install
-### Linux
-#### Podman
+## Setup
+### Install
+#### Linux
+##### Podman
 Create link to: 
 ```
 cd /etc/containers/systemd
@@ -13,9 +14,9 @@ systemctl daemon-reload
 systemctl start nexus
 ```
 
-## Prepare
-### Setup initial DB
-#### Linux
+### Prepare
+#### Setup initial DB
+##### Linux
 ```
 systemctl stop nexus
 cd /mnt/repository/nexus-data
@@ -33,7 +34,7 @@ systemctl start nexus
 Use the _maven/settings.xml_ as user settings file.
 
 ### Linux
-Create link to: 
+Create link: 
 ```
 mkdir -p .m2
 cd .m2
