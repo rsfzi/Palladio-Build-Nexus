@@ -27,7 +27,7 @@ systemctl start nexus
 ```
 
 ### Initialize / repair nexus blob store
-1. Open the local [nexus instance](http://localhost:8081).
+1. Open the [local nexus instance](http://localhost:8081).
 1. Login with: admin / nexus.
 1. Go to _Settings/System/Tasks_.
 1. Run task: _backup_repair_blob_store_
@@ -36,7 +36,7 @@ systemctl start nexus
 Use the _maven/settings.xml_ as user settings file.
 
 ### Linux
-Create link: 
+Create link to user settings file:
 ```
 mkdir -p .m2
 cd .m2
