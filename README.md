@@ -1,12 +1,14 @@
 # Palladio-Build-Nexus
 Setup a nexus cache for palladio builds.  
-Clone this repo to: `<develop>/Palladio-Build-Nexus`
 
 ## Setup
+Clone this repo to: `<develop>/Palladio-Build-Nexus`
+
 ### Install
+Create nexus service.
+
 #### Linux
 ##### Podman
-Create link to: 
 ```
 cd /etc/containers/systemd
 ln -s <develop>/Palladio-Build-Nexus/linux/podman/nexus.container
@@ -15,8 +17,8 @@ systemctl start nexus
 ```
 
 ### Prepare
-#### Setup initial DB
-##### Linux
+Setup initial nexus DB.
+#### Linux
 ```
 systemctl stop nexus
 cd /mnt/repository/nexus-data
@@ -24,7 +26,7 @@ cp <develop>/Palladio-Build-Nexus/nexus/nexus.mv.db .
 systemctl start nexus
 ```
 
-### Initialize / repair blob store
+### Initialize / repair nexus blob store
 1. Open the local [nexus instance](http://localhost:8081).
 1. Login with: admin / nexus.
 1. Go to _Settings/System/Tasks_.
