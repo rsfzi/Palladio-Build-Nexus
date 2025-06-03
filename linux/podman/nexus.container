@@ -1,0 +1,19 @@
+[Unit]
+Description=Nexus Container
+
+[Service]
+Restart=always
+
+[Container]
+#Label=nexus
+ContainerName=nexus
+Image=sonatype/nexus3:3.80.0
+PublishPort=8081:8081
+Volume=/mnt/repository/nexus-data:/nexus-data
+Volume=/mnt/backup/nexus:/backup
+#StopTimeout=120
+PodmanArgs=--stop-timeout 120
+Network=host
+
+[Install]
+WantedBy=multi-user.target default.target
