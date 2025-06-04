@@ -16,6 +16,11 @@ systemctl daemon-reload
 systemctl start nexus
 ```
 
+#### Windows
+##### Podman
+Follow these instructions:
+[autostart-podman-containers-on-windows](https://medium.com/@saderi/how-to-autostart-podman-containers-on-windows-9db2185351e1)
+
 ### Prepare
 Setup initial nexus DB.
 #### Linux
@@ -25,6 +30,8 @@ cd /mnt/repository/nexus-data
 cp <develop>/Palladio-Build-Nexus/nexus/nexus.mv.db .
 systemctl start nexus
 ```
+
+#### Windows
 
 ### Initialize / repair nexus blob store
 1. Open the [local nexus instance](http://localhost:8081).
