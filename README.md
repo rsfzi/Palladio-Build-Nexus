@@ -104,3 +104,10 @@ mkdir -p .m2
 cd .m2
 ln -s <develop>/Palladio-Build-Nexus/maven/settings.xml
 ```
+### Windows
+Copy user settings file:
+```
+mkdir .m2
+cd .m2
+copy /B <develop>/Palladio-Build-Nexus/maven/settings.xml .
+```
