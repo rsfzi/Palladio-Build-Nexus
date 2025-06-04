@@ -65,9 +65,6 @@ wsl hostname -I
 netsh interface portproxy add v4tov4 listenaddress=127.0.0.1 listenport=8081 connectaddress=<ip address> connectport=8081
 ```
 
-Follow these instructions:
-[autostart-podman-containers-on-windows](https://medium.com/@saderi/how-to-autostart-podman-containers-on-windows-9db2185351e1)
-
 ### Prepare
 Setup initial nexus DB.
 #### Linux
