@@ -2,25 +2,60 @@
 Setup a nexus cache for palladio builds.  
 
 ## Setup
-Clone this repo to: `<develop>/Palladio-Build-Nexus`
-
 ### Install
 Create nexus service.
 
 #### Linux
+Clone this repo to: `<develop>/Palladio-Build-Nexus`
+
 ##### Podman
+This configuration expects to folders to exist and owned by user id 200 on the host machine:
+```
+sudo mkdir -p /mnt/repository/nexus-data
+sudo mkdir -p /mnt/backup/nexus
+sudo chown 200 /mnt/repository/nexus-data
+sudo chown 200 /mnt/backup/nexus
+```
+
+Create and start the nexus service.
 ```
 cd /etc/containers/systemd
-ln -s <develop>/Palladio-Build-Nexus/linux/podman/nexus.container
-systemctl daemon-reload
-systemctl start nexus
+sudo ln -s <develop>/Palladio-Build-Nexus/linux/podman/nexus.container
+sudo systemctl daemon-reload
+sudo systemctl start nexus
 ```
-This configuration expects to folders to exist and owned by user id 200 on the host machine:
-- _/mnt/repository/nexus-data_ - holds the nexus files
-- _/mnt/backup/nexus_ - receives nexus backup files
 
 #### Windows
 ##### Podman
+```
+podman machine init nexus
+podman machine start nexus
+podman machine ssh nexus
+sudo yum -y install git
+```
+Configure git to access github from nexus machine.
+Then clone this repo to: `<develop>/Palladio-Build-Nexus`
+```
+podman machine ssh nexus
+mkdir -p <develop>
+cd <develop>
+git clone git@github.com:rsfzi/Palladio-Build-Nexus.git
+```
+Prepare folders
+```
+sudo mkdir -p /mnt/repository/nexus-data
+sudo mkdir -p /mnt/backup/nexus
+sudo chown 200 /mnt/repository/nexus-data
+sudo chown 200 /mnt/backup/nexus
+```
+Create and start the nexus service.
+```
+cd /etc/containers/systemd
+sudo ln -s <develop>/Palladio-Build-Nexus/linux/podman/nexus.container
+sudo systemctl daemon-reload
+sudo systemctl start nexus
+```
+
 Follow these instructions:
 [autostart-podman-containers-on-windows](https://medium.com/@saderi/how-to-autostart-podman-containers-on-windows-9db2185351e1)
 
@@ -28,13 +63,21 @@ Follow these instructions:
 Setup initial nexus DB.
 #### Linux
 ```
-systemctl stop nexus
-cd /mnt/repository/nexus-data
-cp <develop>/Palladio-Build-Nexus/nexus/nexus.mv.db .
-systemctl start nexus
+sudo systemctl stop nexus
+cd /mnt/repository/nexus-data/db
+sudo cp <develop>/Palladio-Build-Nexus/nexus/nexus.mv.db .
+sudo systemctl start nexus
 ```
 
 #### Windows
+##### Podman
+```
+podman machine ssh nexus
+sudo systemctl stop nexus
+cd /mnt/repository/nexus-data/db
+sudo cp <develop>/Palladio-Build-Nexus/nexus/nexus.mv.db .
+sudo systemctl start nexus
+```
 
 ### Initialize / repair nexus blob store
 1. Open the [local nexus instance](http://localhost:8081).
