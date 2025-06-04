@@ -15,6 +15,9 @@ ln -s <develop>/Palladio-Build-Nexus/linux/podman/nexus.container
 systemctl daemon-reload
 systemctl start nexus
 ```
+This configuration expects to folders to exist and owned by user id 200 on the host machine:
+- _/mnt/repository/nexus-data_ - holds the nexus files
+- _/mnt/backup/nexus_ - receives nexus backup files
 
 #### Windows
 ##### Podman
