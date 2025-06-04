@@ -55,6 +55,15 @@ sudo ln -s <develop>/Palladio-Build-Nexus/linux/podman/nexus.container
 sudo systemctl daemon-reload
 sudo systemctl start nexus
 ```
+Create port forward to nexus service:  
+1. get IP address of nexus machine
+```
+wsl hostname -I
+```
+2. open powershell as administrator
+```
+netsh interface portproxy add v4tov4 listenaddress=127.0.0.1 listenport=8081 connectaddress=<ip address> connectport=8081
+```
 
 Follow these instructions:
 [autostart-podman-containers-on-windows](https://medium.com/@saderi/how-to-autostart-podman-containers-on-windows-9db2185351e1)
