@@ -19,10 +19,10 @@ sudo chown 200 /mnt/backup/nexus
 
 Create and start the nexus service.
 ```
-cd /etc/containers/systemd
+cd ~/.config/containers/systemd
 sudo ln -s <develop>/Palladio-Build-Nexus/linux/podman/nexus.container
-sudo systemctl daemon-reload
-sudo systemctl start nexus
+systemctl --user daemon-reload
+systemctl --user start nexus
 ```
 
 #### Windows
