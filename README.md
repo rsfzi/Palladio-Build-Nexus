@@ -17,7 +17,7 @@ sudo chown 200 /mnt/repository/nexus-data
 sudo chown 200 /mnt/backup/nexus
 ```
 
-Create and start the nexus service.
+Create and start the nexus user service.
 ```
 cd ~/.config/containers/systemd
 sudo ln -s <develop>/Palladio-Build-Nexus/linux/podman/nexus.container
