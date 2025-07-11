@@ -16,4 +16,4 @@ PodmanArgs=--stop-timeout 120
 Network=host
 
 [Install]
-WantedBy=multi-user.target default.target
+WantedBy=default.target
