@@ -29,6 +29,13 @@
       <mirrorOfLayouts>p2</mirrorOfLayouts>
     </mirror>    
     <mirror>
+      <id>eclipse_2022-12</id>
+      <url>http://localhost:8081/repository/eclipse_2022-12</url>
+      <mirrorOf>https://download.eclipse.org/releases/2022-12/202212071000</mirrorOf>
+      <layout>p2</layout>
+      <mirrorOfLayouts>p2</mirrorOfLayouts>
+    </mirror>
+    <mirror>
       <id>eclipse_2021-12</id>
       <url>http://localhost:8081/repository/eclipse_2021-12</url>
       <mirrorOf>https://download.eclipse.org/releases/2021-12/202112081000</mirrorOf>
