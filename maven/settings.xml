@@ -13,7 +13,7 @@
     <mirror>
       <id>sonatype</id>
       <url>http://localhost:8081/repository/sonatype/</url>
-      <mirrorOf>rso-public-grid,sonatype-snapshots</mirrorOf>
+      <mirrorOf>rso-public-grid,sonatype-snapshots,central-portal-snapshots</mirrorOf>
     </mirror>
     <mirror>
       <id>tycho</id>
@@ -22,6 +22,13 @@
     </mirror>    
 
     <mirror>
+      <id>eclipse_2025-12</id>
+      <url>http://localhost:8081/repository/eclipse_2025-12/</url>
+      <mirrorOf>https://download.eclipse.org/releases/2025-12/202512101000</mirrorOf>
+      <layout>p2</layout>
+      <mirrorOfLayouts>p2</mirrorOfLayouts>
+    </mirror>    
+    <!--mirror>
       <id>eclipse_2023-03</id>
       <url>http://localhost:8081/repository/eclipse_2023-03</url>
       <mirrorOf>https://download.eclipse.org/releases/2023-03/202303151000</mirrorOf>
@@ -34,7 +41,7 @@
       <mirrorOf>https://download.eclipse.org/releases/2022-12/202212071000</mirrorOf>
       <layout>p2</layout>
       <mirrorOfLayouts>p2</mirrorOfLayouts>
-    </mirror>
+    </mirror-->
     <mirror>
       <id>eclipse_2021-12</id>
       <url>http://localhost:8081/repository/eclipse_2021-12</url>
@@ -44,6 +51,13 @@
     </mirror>
 
     <mirror>
+      <id>orbit_aggregation_4.38.0</id>
+      <url>http://localhost:8081/repository/orbit_aggregation_4.38.0/</url>
+      <mirrorOf>https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/release/4.38.0</mirrorOf>
+      <layout>p2</layout>
+      <mirrorOfLayouts>p2</mirrorOfLayouts>
+    </mirror> 
+    <!--mirror>
       <id>orbit_2020-11</id>
       <url>http://localhost:8081/repository/orbit_2020-11/</url>
       <mirrorOf>https://download.eclipse.org/tools/orbit/downloads/drops/R20201118194144/repository</mirrorOf>
@@ -70,31 +84,31 @@
       <mirrorOf>https://download.eclipse.org/tools/orbit/downloads/2023-03</mirrorOf>
       <layout>p2</layout>
       <mirrorOfLayouts>p2</mirrorOfLayouts>
-    </mirror>
+    </mirror-->
 
-    <mirror>
+    <!--mirror>
       <id>xtext_2.29.0</id>
       <url>http://localhost:8081/repository/xtext_2.29.0/</url>
       <mirrorOf>https://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.29.0</mirrorOf>
       <layout>p2</layout>
       <mirrorOfLayouts>p2</mirrorOfLayouts>
-    </mirror>
+    </mirror-->
 
-    <mirror>
+    <!--mirror>
       <id>henshin_1.6.0</id>
       <url>http://localhost:8081/repository/henshin_1.6.0/</url>
       <mirrorOf>http://download.eclipse.org/modeling/emft/henshin/updates/1.6.0</mirrorOf>
       <layout>p2</layout>
       <mirrorOfLayouts>p2</mirrorOfLayouts>
-    </mirror>
+    </mirror-->
 
-    <mirror>
+    <!--mirror>
       <id>papyrus_2022-12</id>
       <url>http://localhost:8081/repository/papyrus_2022-12/</url>
       <mirrorOf>https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2022-12</mirrorOf>
       <layout>p2</layout>
       <mirrorOfLayouts>p2</mirrorOfLayouts>
-    </mirror>
+    </mirror-->
 
     <!-- -->
     <mirror>
